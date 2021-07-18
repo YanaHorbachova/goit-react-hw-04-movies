@@ -1,13 +1,14 @@
 import React from 'react' ;
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import CardListPreview from './CardListPreview';
+import style from './CardList.module.css'
 
 const CardList = ({ movies, location }) => {
     return (
-        <ul>
+        <ul className = {style.list}>
             {movies.map(({ id, poster_path, title, vote_average, vote_count }) => (
-                <li key = {id}>
-                   <Link to={{
+                <li className = {style.Item} key = {id} >
+                   <NavLink to={{
               pathname: `/movies/${id}`,
               state: {
                 from: location,
@@ -19,12 +20,10 @@ const CardList = ({ movies, location }) => {
               vote_average={vote_average}
               vote_count={vote_count}
             />
-             </Link>
+             </NavLink>
                 </li>
             ))}
         </ul>
-
-
     );
 }
 
