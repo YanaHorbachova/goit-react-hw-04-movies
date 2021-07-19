@@ -11,15 +11,15 @@ const Cast = ({ cast }) => {
         {cast.length > 0 ? (
           <ul className={style.CastList}>
             {cast.map(({ cast_id, profile_path, name, character }) => (
-              <li key={cast_id}>
-                <img
+              <li className={style.ListItem} key={cast_id}>
+                <img className = {style.Image}
                   src={profile_path
                       ? `${CAST_IMG_URL}${profile_path}`
                       : defaultAvatar
                   }
                   alt={name}
                 />
-                <div>
+                <div className={style.ItemContent}>
                   <h3>{name}</h3>
                   <p>{character}</p>
                 </div>
@@ -27,7 +27,7 @@ const Cast = ({ cast }) => {
             ))}
           </ul>
         ) : (
-          <h2>No Info</h2>
+          <h2 className = {style.NoInfoTitle}>No Info</h2>
         )}
       </>
     );
