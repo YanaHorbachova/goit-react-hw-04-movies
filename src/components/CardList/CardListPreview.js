@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import style from './CardList.module.css'
+import style from './CardList.module.css';
+import defaultImage from '../../img/noPosterImg.png';
 
 
 const CardListPreview = ({ poster_path, title, vote_average, vote_count }) => {
@@ -14,7 +15,7 @@ const CardListPreview = ({ poster_path, title, vote_average, vote_count }) => {
           </div>
           ) : (
             <img
-              src={`https://dummyimage.com/150x100/000/fff.jpg&text=no+image+:((`}
+              src={defaultImage}
               alt={title}
             />
         )}

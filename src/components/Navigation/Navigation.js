@@ -5,7 +5,7 @@ import style from './Navigation.module.css';
 
 const Navigation = () => {
     return (
-      <nav className={style.nav}>
+      <header className={style.nav}>
         <NavLink
           exact
           to={routes.home}
@@ -22,7 +22,7 @@ const Navigation = () => {
         >
           Movies
         </NavLink>
-      </nav>
+      </header>
     );
   };
   

@@ -9,7 +9,7 @@
   margin-right: 20px;
   margin-bottom: 20px;  
   width: calc((100% - 80px) / 4);
-
+  background-color: #fff;
 }
 
 .Item:hover {
