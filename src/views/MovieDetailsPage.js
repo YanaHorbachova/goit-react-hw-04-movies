@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import {fetchMovieById} from '../services/api-services'
+import GoBackButton from '../components/GoBackButton';
+import Cast from './Cast';
 import Reviews from './Reviews'
+import { routes } from '../routes';
 
 
 class MovieDetailsPage extends Component {
@@ -32,10 +35,10 @@ class MovieDetailsPage extends Component {
         .catch(console.log);
 }
 
-// handleGoBack = () => {
-//     const { location, history } = this.props;
-//     history.push(location?.state?.from || routes.home);
-//   };
+handleGoBack = () => {
+    const { location, history } = this.props;
+    history.push(location?.state?.from || routes.home);
+  };
 
     render () {
         const { poster_path, title, genres, overview, cast, reviews } = this.state;
@@ -44,11 +47,19 @@ class MovieDetailsPage extends Component {
 
         return (
             <>
-                <NavLink to={{pathname: `${match.url}/reviews`, state: { from: deepLocation }}} >
-                    <span>Reviews</span>
-                </NavLink>
+                <GoBackButton onClick={this.handleGoBack} />
+                <div>
+                    <NavLink to={{pathname: `${match.url}/cast`, state: { from: deepLocation }}}>
+                        <span>Cast</span>
+                    </NavLink>
 
-
+                    <NavLink to={{pathname: `${match.url}/reviews`, state: { from: deepLocation }}} >
+                        <span>Reviews</span>
+                    </NavLink>
+                </div>
+                <Route path={`${match.path}/cast`}
+                    render={props => <Cast {...props} cast={cast} />}
+                />
                 <Route path={`${match.path}/reviews`}
                     render={props => <Reviews {...props} reviews={reviews} />}
                  />
