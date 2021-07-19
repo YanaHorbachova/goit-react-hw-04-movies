@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {fetchMovieById} from '../services/api-services'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Reviews = ({ reviews }) => {
     return (
@@ -23,3 +23,13 @@ const Reviews = ({ reviews }) => {
   };
   
   export default Reviews;
+
+  Reviews.propTypes = {
+    reviews: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+      }).isRequired,
+    ).isRequired,
+  };
