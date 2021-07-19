@@ -3,7 +3,8 @@ import { NavLink, Route } from 'react-router-dom';
 import {fetchMovieById} from '../services/api-services'
 import GoBackButton from '../components/GoBackButton';
 import Cast from '../components/Cast';
-import Reviews from '../components/Reviews'
+import Reviews from '../components/Reviews';
+import MovieInfo from '../components/MovieInfo';
 import { routes } from '../routes';
 import styles from './MovieDetailsPage.module.css';
 
@@ -49,6 +50,7 @@ handleGoBack = () => {
         return (
             <>
                 <GoBackButton onClick={this.handleGoBack} />
+                <MovieInfo poster_path={poster_path} title={title} genres={genres} overview={overview} />
                 <div className= {styles.nav}>
                     <NavLink className={styles.NavLink} to={{pathname: `${match.url}/cast`, state: { from: deepLocation }}}>
                         <span>Cast</span>

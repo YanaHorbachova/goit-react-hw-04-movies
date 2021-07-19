@@ -1,0 +1,25 @@
+.MovieBox {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin-top: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .Image {
+    margin-right: 50px;
+  }
+  
+  .Title {
+    text-transform: uppercase;
+  }
+
+  .Genres {
+    color: teal;
+  }
+  
+  .Overview {
+    font-size: 18px;
+  }
+  
