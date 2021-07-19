@@ -1,8 +1,12 @@
 import React from 'react';
+import Navigation from '../components/Navigation';
 
 const MoviesPage = () => {
-    return (
-    <h1>MoviesPage</h1>
+  return (
+    <>
+      <Navigation />
+      <h1>MoviesPage</h1>
+    </>
   );
 }
 

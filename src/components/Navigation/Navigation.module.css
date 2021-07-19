@@ -1,0 +1,27 @@
+.nav {
+    margin: 0;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+  
+    list-style: none;
+    border-bottom: 2px solid  blueviolet;
+  }
+  
+  .home {
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 25px;
+    color: black;
+  }
+  
+  .movies {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+  }
+  
+  .item_active {
+    color:  blueviolet;
+  }
+  

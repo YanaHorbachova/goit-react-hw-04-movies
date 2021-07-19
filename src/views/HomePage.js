@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchPopularMovies } from '../services/api-services';
 import CardList from '../components/CardList';
+import Navigation from '../components/Navigation';
 
 class HomeView extends Component {
 state = {
@@ -16,7 +17,8 @@ async componentWillMount() {
 render () {
     const { movies } = this.state;
     return (
-        <>
+        <>        
+        <Navigation />
         <CardList movies={movies}/>
         </>
     );
