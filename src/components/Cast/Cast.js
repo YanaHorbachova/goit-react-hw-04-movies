@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './Cast.module.css';
+import defaultAvatar from '../../img/defaultAvatar.png';
 
 const CAST_IMG_URL = 'https://image.tmdb.org/t/p/w200';
 
@@ -7,11 +9,14 @@ const Cast = ({ cast }) => {
     return (
       <>
         {cast.length > 0 ? (
-          <ul>
+          <ul className={style.CastList}>
             {cast.map(({ cast_id, profile_path, name, character }) => (
               <li key={cast_id}>
                 <img
-                  src={`${CAST_IMG_URL}${profile_path}`}
+                  src={profile_path
+                      ? `${CAST_IMG_URL}${profile_path}`
+                      : defaultAvatar
+                  }
                   alt={name}
                 />
                 <div>
