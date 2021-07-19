@@ -4,11 +4,12 @@ import { routes } from './routes';
 import HomePage from './views/HomePage';
 import MoviesPage from './views/MoviesPage';
 import MovieDetailsPage from './views/MovieDetailsPage';
+import Loader from './components/Loader';
 
 
 const App = () => (
 <>
-
+{/* <Loader /> */}
 <Switch>
     <Route exact path={routes.home} component={HomePage} />
     <Route path = {routes.movieDetails} component = {MovieDetailsPage} />
