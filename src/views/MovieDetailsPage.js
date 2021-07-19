@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import {fetchMovieById} from '../services/api-services'
 import GoBackButton from '../components/GoBackButton';
-import Cast from './Cast';
-import Reviews from './Reviews'
+import Cast from '../components/Cast';
+import Reviews from '../components/Reviews'
 import { routes } from '../routes';
+import styles from './MovieDetailsPage.module.css';
 
 
 class MovieDetailsPage extends Component {
@@ -48,12 +49,12 @@ handleGoBack = () => {
         return (
             <>
                 <GoBackButton onClick={this.handleGoBack} />
-                <div>
-                    <NavLink to={{pathname: `${match.url}/cast`, state: { from: deepLocation }}}>
+                <div className= {styles.nav}>
+                    <NavLink className={styles.NavLink} to={{pathname: `${match.url}/cast`, state: { from: deepLocation }}}>
                         <span>Cast</span>
                     </NavLink>
 
-                    <NavLink to={{pathname: `${match.url}/reviews`, state: { from: deepLocation }}} >
+                    <NavLink className={styles.NavLink} to={{pathname: `${match.url}/reviews`, state: { from: deepLocation }}} >
                         <span>Reviews</span>
                     </NavLink>
                 </div>

@@ -1,0 +1,10 @@
+.nav {
+    padding-top: 100px;
+}
+
+.NavLink {
+    display: flex;    
+    flex-wrap: wrap;
+    text-decoration: none;
+    padding: 10px;
+}
