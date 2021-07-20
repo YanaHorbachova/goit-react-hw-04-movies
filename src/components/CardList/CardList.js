@@ -22,6 +22,4 @@ const CardList = ({ movies, location }) => {
   );
 }
 
-
-
 export default withRouter(CardList);

@@ -5,19 +5,19 @@ import Loader from './components/Loader';
 
 
  const HomePage = lazy(() =>
-  import('./views/HomePage'),
+  import('./views/HomePage' /*webpackChunkName: "home-views"*/),
 );
 const MoviesPage = lazy(() =>
-  import('./views/MoviesPage'),
+  import('./views/MoviesPage' /*webpackChunkName: "movies-views"*/),
 );
 const MovieDetailsPage = lazy(() =>
   import(
-    './views/MovieDetailsPage'),
+    './views/MovieDetailsPage' /*webpackChunkName: "movies-details-views"*/),
 );
 
 const App = () => (
 <>
-<Suspense fallback={<Loader />}>
+<Suspense fallback={<Loader />}> 
 <Switch>
     <Route exact path={routes.home} component={HomePage} />
     <Route path = {routes.movieDetails} component = {MovieDetailsPage} />
